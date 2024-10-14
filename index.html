@@ -325,7 +325,242 @@ scroll-margin-top: 100px; /* Adjust based on your header height */
         </div>
     </footer>
     
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- JavaScript for Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- JS -->
+    <script>
+// Function to open the modal with specific content
+function openModal(contentType) {
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+
+    // Clear previous modal content
+    modalContent.innerHTML = '';
+
+    // Set modal content based on the content type
+    let content = '';
+
+    switch (contentType) {
+        case 'AI & Automation':
+            content = `
+                <h2 class="text-4xl font-bold mb-6 gradient-text">AI & Automation</h2>
+                <img src="assets/images/ai-automation.jpg" alt="AI & Automation" class="w-full rounded-lg mb-6">
+                <p class="text-lg leading-relaxed">We create intelligent automation systems powered by AI to streamline operations, reduce costs, and optimize efficiency. Our AI-driven solutions revolutionize how businesses operate, enhancing productivity and reducing manual tasks.</p>
+                <canvas id="aiAutomationChart" width="400" height="400" class="mx-auto mb-6"></canvas>
+            `;
+            modalContent.innerHTML = content;
+            setTimeout(() => {
+                createDoughnutChart('aiAutomationChart', ['Efficiency', 'Cost Reduction', 'Productivity'], [45, 30, 25], ['#FF7E5F', '#FD3A69', '#FFEDDA']);
+            }, 300);
+            break;
+
+        case 'Cloud Solutions':
+            content = `
+                <h2 class="text-4xl font-bold mb-6 gradient-text">Cloud Solutions</h2>
+                <img src="assets/images/cloud-solutions.jpg" alt="Cloud Solutions" class="w-full rounded-lg mb-6">
+                <p class="text-lg leading-relaxed">Our cloud solutions help businesses scale globally with secure, reliable, and flexible infrastructure that meets your needs. We offer tailored cloud services to ensure that your data is always accessible and protected.</p>
+                <canvas id="cloudBarChart" width="400" height="400" class="mx-auto mb-6"></canvas>
+            `;
+            modalContent.innerHTML = content;
+            setTimeout(() => {
+                createBarChart('cloudBarChart', ['Scalability', 'Security', 'Flexibility'], [80, 75, 90], '#FD3A69');
+            }, 300);
+            break;
+
+        case 'Cybersecurity':
+            content = `
+                <h2 class="text-4xl font-bold mb-6 gradient-text">Cybersecurity</h2>
+                <img src="assets/images/cybersecurity.jpg" alt="Cybersecurity" class="w-full rounded-lg mb-6">
+                <p class="text-lg leading-relaxed">We provide state-of-the-art cybersecurity services to protect your data, systems, and networks from threats and vulnerabilities. Our comprehensive security solutions give you peace of mind in a digital world full of risks.</p>
+                <canvas id="cyberPolarChart" width="400" height="400" class="mx-auto mb-6"></canvas>
+            `;
+            modalContent.innerHTML = content;
+            setTimeout(() => {
+                createPolarAreaChart('cyberPolarChart', ['Data Protection', 'Network Security', 'Threat Prevention'], [40, 35, 25], ['#FF7E5F', '#FD3A69', '#FFEDDA']);
+            }, 300);
+            break;
+
+        case 'Who We Are':
+            content = `
+                <h2 class="text-4xl font-bold mb-6 gradient-text">Who We Are</h2>
+                <img src="assets/images/who-we-are.jpg" alt="Who We Are" class="w-full rounded-lg mb-6">
+                <p class="text-lg leading-relaxed">We are a tech-driven company focused on innovation, developing cutting-edge solutions that push the boundaries of what's possible. Our mission is to create sustainable, scalable, and impactful technologies for the modern world.</p>
+                <canvas id="whoWeAreHorizontalBarChart" width="400" height="400" class="mx-auto mb-6"></canvas>
+            `;
+            modalContent.innerHTML = content;
+            setTimeout(() => {
+                createHorizontalBarChart('whoWeAreHorizontalBarChart', ['Innovation', 'Scalability', 'Impact'], [85, 90, 95], '#FF7E5F');
+            }, 300);
+            break;
+
+        case 'Our Vision':
+            content = `
+                <h2 class="text-4xl font-bold mb-6 gradient-text">Our Vision</h2>
+                <img src="assets/images/vision-image.jpg" alt="Our Vision" class="w-full rounded-lg mb-6">
+                <p class="text-lg leading-relaxed">Our vision is to shape the future by leveraging the latest advancements in AI, data science, and automation. We aim to provide transformative experiences and breakthrough solutions that redefine industries and improve the way people live and work.</p>
+                <canvas id="visionLineChart" width="400" height="400" class="mx-auto mb-6"></canvas>
+            `;
+            modalContent.innerHTML = content;
+            setTimeout(() => {
+                createLineChart('visionLineChart', ['2021', '2022', '2023', '2024'], [50, 65, 80, 95], '#FD3A69');
+            }, 300);
+            break;
+
+        default:
+            content = `<p>Content not available.</p>`;
+            modalContent.innerHTML = content;
+    }
+
+    // Show the modal
+    modal.classList.add('modal-open');
+}
+
+// Function to close the modal
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.classList.remove('modal-open');
+}
+
+// Create Doughnut Chart
+function createDoughnutChart(canvasId, labels, data, colors) {
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: data,
+                backgroundColor: colors,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+}
+
+// Create Bar Chart
+function createBarChart(canvasId, labels, data, color) {
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Performance',
+                data: data,
+                backgroundColor: color,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+}
+
+// Create Polar Area Chart (Cybersecurity)
+function createPolarAreaChart(canvasId, labels, data, colors) {
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    new Chart(ctx, {
+        type: 'polarArea',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: data,
+                backgroundColor: colors,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                r: {
+                    ticks: {
+                        display: false // Ensures it remains circular and balanced
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Create Horizontal Bar Chart (Who We Are)
+function createHorizontalBarChart(canvasId, labels, data, color) {
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Attributes',
+                data: data,
+                backgroundColor: color,
+            }]
+        },
+        options: {
+            responsive: true,
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+}
+
+// Create Line Chart
+function createLineChart(canvasId, labels, data, color) {
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Growth Over Time',
+                data: data,
+                borderColor: color,
+                fill: false,
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+}
+
+// Attach event listeners to buttons for opening modals
+document.querySelectorAll('.btn-glow').forEach(button => {
+    button.addEventListener('click', function () {
+        const textContent = this.parentElement.querySelector('h3').textContent;
+        openModal(textContent);
+    });
+});
+    </script>
     </body>
     </html> 
