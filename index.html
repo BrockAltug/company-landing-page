@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Landing page for a futuristic company">
+    <title>Futuristic Company Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- link style sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="text-white font-sans leading-relaxed tracking-wide">
+
+    <!-- Header Section -->
+    <header class="glass-header py-6 top-0 left-0 z-10 shadow-xl">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-4xl font-extrabold gradient-text hover:text-yellow-300 transition duration-300">CompanyName</a>
+            <ul class="flex space-x-6 md:space-x-8">
+                <li><a href="#about" class="hover:text-yellow-300 transition duration-300">About</a></li>
+                <li><a href="#services" class="hover:text-yellow-300 transition duration-300">Services</a></li>
+                <li><a href="#team" class="hover:text-yellow-300 transition duration-300">Team</a></li>
+                <li><a href="#blog" class="hover:text-yellow-300 transition duration-300">Blog</a></li>
+                <li><a href="#faq" class="hover:text-yellow-300 transition duration-300">FAQ</a></li>
+                <li><a href="#contact" class="hover:text-yellow-300 transition duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="parallax-bg flex items-center justify-center text-center relative">
+            <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+            <div class="container mx-auto relative z-10 px-6">
+                <h1 class="text-5xl md:text-8xl font-extrabold mb-4 hero-title gradient-text">Welcome to the Future</h1>
+                <p class="text-xl md:text-3xl mb-8 hero-text gradient-text">Revolutionizing industries with cutting-edge technology and innovative solutions</p>
+            </div>
+        </section>
+    
+        <!-- About Section -->
+<section id="about" class="py-24 bg-black/40 text-white">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-6xl font-bold mb-16 gradient-text">About Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-3xl md:text-4xl font-semibold mb-6 gradient-text">Who We Are</h3>
+                    <p class="text-lg leading-relaxed">We are a tech-driven company focused on innovation, developing cutting-edge solutions that push the boundaries of what's possible. Our mission is to create sustainable, scalable, and impactful technologies for the modern world.</p>
+                </div>
+                <button class="mt-4 btn-glow">Learn More</button>
+            </div>
+            <div class="bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-3xl md:text-4xl font-semibold mb-6 gradient-text">Our Vision</h3>
+                    <p class="text-lg leading-relaxed">Our vision is to shape the future by leveraging the latest advancements in AI, data science, and automation. We aim to provide transformative experiences and breakthrough solutions that redefine industries and improve the way people live and work.</p>
+                </div>
+                <button class="mt-4 btn-glow">Learn More</button>
+            </div>
+        </div>
+    </div>
+</section>
+    
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-black/40 text-white">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-16 gradient-text">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="service-card bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <h3 class="text-3xl md:text-4xl font-semibold mb-6 gradient-text">AI & Automation</h3>
+                        <p>We create intelligent automation systems powered by AI to streamline operations, reduce costs, and optimize efficiency.</p>
+                        <button class="mt-4 btn-glow">Learn More</button>
+                    </div>
+                    <div class="service-card bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <h3 class="text-3xl md:text-4xl font-semibold mb-6 gradient-text">Cloud Solutions</h3>
+                        <p>Our cloud solutions help businesses scale globally with secure, reliable, and flexible infrastructure that meets your needs.</p>
+                        <button class="mt-4 btn-glow">Learn More</button>
+                    </div>
+                    <div class="service-card bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <h3 class="text-3xl md:text-4xl font-semibold mb-6 gradient-text">Cybersecurity</h3>
+                        <p>We provide state-of-the-art cybersecurity services to protect your data, systems, and networks from threats and vulnerabilities.</p>
+                        <button class="mt-4 btn-glow">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Team Section -->
+        <section id="team" class="py-24 bg-black/40 text-white">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-16 gradient-text">Our Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="team-member bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <img src="team1.jpg" alt="Team Member 1" class="mb-6 rounded-full w-32 mx-auto">
+                        <h3 class="text-3xl font-semibold gradient-text">John Doe</h3>
+                        <p class="mt-4 text-lg">CEO & Founder</p>
+                    </div>
+                    <div class="team-member bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <img src="team2.jpg" alt="Team Member 2" class="mb-6 rounded-full w-32 mx-auto">
+                        <h3 class="text-3xl font-semibold gradient-text">Jane Smith</h3>
+                        <p class="mt-4 text-lg">CTO</p>
+                    </div>
+                    <div class="team-member bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <img src="team3.jpg" alt="Team Member 3" class="mb-6 rounded-full w-32 mx-auto">
+                        <h3 class="text-3xl font-semibold gradient-text">Bob Johnson</h3>
+                        <p class="mt-4 text-lg">Lead Developer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Blog Section -->
+<section id="blog" class="py-24 bg-black/40 text-white">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl md:text-6xl font-bold mb-16 gradient-text">Our Blog</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="blog-post bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                <h3 class="text-3xl md:text-4xl font-semibold gradient-text mb-6">AI in 2024: What's Next?</h3>
+                <p class="text-lg leading-relaxed">Explore the next big innovations in AI that are set to reshape the future of industries and daily life.</p>
+                <a href="#" class="mt-4 btn-glow">Read More</a>
+            </div>
+            <div class="blog-post bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                <h3 class="text-3xl md:text-4xl font-semibold gradient-text mb-6">Cloud Security Best Practices</h3>
+                <p class="text-lg leading-relaxed">Learn how to secure your cloud infrastructure with the best industry practices to ensure data safety.</p>
+                <a href="#" class="mt-4 btn-glow">Read More</a>
+            </div>
+            <div class="blog-post bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                <h3 class="text-3xl md:text-4xl font-semibold gradient-text mb-6">Automation in Business</h3>
+                <p class="text-lg leading-relaxed">Find out how automation is transforming businesses across the globe and what you can do to adapt.</p>
+                <a href="#" class="mt-4 btn-glow">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 bg-black/40 text-white">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-16 gradient-text">FAQ</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="faq-item bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <h3 class="text-3xl font-semibold gradient-text mb-6">What services do you offer?</h3>
+                        <p class="text-lg leading-relaxed">We offer AI & Automation, Cloud Solutions, Cybersecurity, and more to help your business thrive.</p>
+                    </div>
+                    <div class="faq-item bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <h3 class="text-3xl font-semibold gradient-text mb-6">How can I get in touch with you?</h3>
+                        <p class="text-lg leading-relaxed">You can contact us via the form on our website or email us at contact@futuristiccompany.com.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-black/40 text-white">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-16 gradient-text">Contact Us</h2>
+                <form class="bg-black/40 p-8 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <div class="mb-6">
+                        <input type="text" placeholder="Your Name" class="w-full p-4 rounded-lg text-black" required>
+                    </div>
+                    <div class="mb-6">
+                        <input type="email" placeholder="Your Email" class="w-full p-4 rounded-lg text-black" required>
+                    </div>
+                    <div class="mb-6">
+                        <textarea placeholder="Your Message" class="w-full p-4 rounded-lg text-black" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-glow">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modalContent"></div>
+        <button onclick="closeModal()" class="mt-4 bg-red-500 hover:bg-red-600 py-2 px-4 rounded-full">Close</button>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto text-center text-white">
+            <p class="text-gray-400">© 2024 Futuristic Company. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    </body>
+    </html> 
