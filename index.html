@@ -85,27 +85,62 @@
         }
     
         /* Full-page consistent sunset gradient background */
-        body {
-            background: linear-gradient(to bottom, #FF7E5F, #FD3A69);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-    
-        main {
-            flex: 1;
-        }
-    
-        /* Header Glass Effect */
-        .glass-header {
-            backdrop-filter: blur(10px) saturate(150%);
-            -webkit-backdrop-filter: blur(10px) saturate(150%);
-            background-color: rgba(17, 25, 40, 0.75);
-            border-radius: 12px;
-            position: fixed;
-            width: 100%;
-            z-index: 10;
-        }
+body {
+    background: linear-gradient(to bottom, #FF7E5F, #FD3A69);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Header Glass Effect */
+.glass-header {
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+}
+
+/* Mobile Menu Styles */
+#mobileMenu {
+    display: none;
+}
+
+#mobileMenu.show {
+    display: block;
+}
+
+/* Mobile Menu Styling */
+#mobileMenu ul {
+    flex-direction: column;
+    background-color: rgba(17, 25, 40, 0.9);
+    padding: 20px;
+    text-align: center;
+}
+
+#mobileMenu ul li {
+    margin-bottom: 15px;
+}
+
+#mobileMenu ul li a {
+    text-align: center;
+    display: block;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    #mobileMenu {
+        display: none;
+    }
+}
     
         /* Modal Styles */
         .modal {
@@ -169,20 +204,44 @@
 
 <body class="text-white font-sans leading-relaxed tracking-wide">
 
-    <!-- Header Section -->
-    <header class="glass-header py-6 top-0 left-0 z-10 shadow-xl">
-        <nav class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-4xl font-extrabold gradient-text hover:text-yellow-300 transition duration-300">CompanyName</a>
-            <ul class="flex space-x-6 md:space-x-8">
-                <li><a href="#about" class="hover:text-yellow-300 transition duration-300">About</a></li>
-                <li><a href="#services" class="hover:text-yellow-300 transition duration-300">Services</a></li>
-                <li><a href="#team" class="hover:text-yellow-300 transition duration-300">Team</a></li>
-                <li><a href="#blog" class="hover:text-yellow-300 transition duration-300">Blog</a></li>
-                <li><a href="#faq" class="hover:text-yellow-300 transition duration-300">FAQ</a></li>
-                <li><a href="#contact" class="hover:text-yellow-300 transition duration-300">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Header Section -->
+<header class="glass-header py-6 top-0 left-0 z-10 shadow-xl">
+    <nav class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="text-4xl font-extrabold gradient-text hover:text-yellow-300 transition duration-300">CompanyName</a>
+        
+        <!-- Hamburger Menu Button for Mobile -->
+        <div class="md:hidden">
+            <button id="navToggle" class="text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul id="navMenu" class="hidden md:flex space-x-6 md:space-x-8">
+            <li><a href="#about" class="hover:text-yellow-300 transition duration-300">About</a></li>
+            <li><a href="#services" class="hover:text-yellow-300 transition duration-300">Services</a></li>
+            <li><a href="#team" class="hover:text-yellow-300 transition duration-300">Team</a></li>
+            <li><a href="#blog" class="hover:text-yellow-300 transition duration-300">Blog</a></li>
+            <li><a href="#faq" class="hover:text-yellow-300 transition duration-300">FAQ</a></li>
+            <li><a href="#contact" class="hover:text-yellow-300 transition duration-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden absolute left-0 right-0 top-full bg-black text-white z-50 p-5">
+        <ul class="space-y-4">
+            <li><a href="#about" class="block hover:text-yellow-300">About</a></li>
+            <li><a href="#services" class="block hover:text-yellow-300">Services</a></li>
+            <li><a href="#team" class="block hover:text-yellow-300">Team</a></li>
+            <li><a href="#blog" class="block hover:text-yellow-300">Blog</a></li>
+            <li><a href="#faq" class="block hover:text-yellow-300">FAQ</a></li>
+            <li><a href="#contact" class="block hover:text-yellow-300">Contact</a></li>
+        </ul>
+    </div>
+</header>
 
     <main>
         <!-- Hero Section -->
@@ -575,6 +634,12 @@ document.querySelectorAll('.btn-glow').forEach(button => {
         openModal(textContent);
     });
 });
+    </script>
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('show');
+        });
     </script>
     </body>
     </html> 
