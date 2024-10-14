@@ -10,81 +10,81 @@
     <!-- link style sheet -->
     <style>
         /* Custom styling for parallax */
-.parallax-bg {
-    background-image: url('./assets/images/image.png');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    z-index: -1;
-}
-
-/* Hero Section Animation */
-.hero-title {
-    animation: fadeInDown 1.5s ease-out;
-}
-
-.hero-text {
-    animation: fadeInUp 1.5s ease-out;
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hover Effects */
-.service-card:hover {
-    transform: translateY(-15px) scale(1.12);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.team-member img {
-    transition: transform 0.6s ease;
-}
-
-.team-member:hover img {
-    transform: rotate(-12deg) scale(1.2);
-    filter: brightness(1.2);
-}
-
-/* Simple Button Glowing Effect with Gradient Glow */
-.btn-glow {
-position: relative;
-background: linear-gradient(to right, #FF7E5F, #FD3A69);
-color: white;
-padding: 12px 20px;
-border-radius: 8px;
-display: inline-block;
-text-align: center;
-transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.btn-glow:hover {
-box-shadow: 0 0 15px 5px rgba(255, 126, 95, 0.6), 0 0 30px 10px rgba(253, 58, 105, 0.4);
-transform: scale(1.05);
-}
-
-/* Full-page consistent sunset gradient background */
+        .parallax-bg {
+            background-image: url('./assets/images/image.png');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            z-index: -1;
+        }
+    
+        /* Hero Section Animation */
+        .hero-title {
+            animation: fadeInDown 1.5s ease-out;
+        }
+    
+        .hero-text {
+            animation: fadeInUp 1.5s ease-out;
+        }
+    
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        /* Hover Effects */
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.12);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+    
+        .team-member img {
+            transition: transform 0.6s ease;
+        }
+    
+        .team-member:hover img {
+            transform: rotate(-12deg) scale(1.2);
+            filter: brightness(1.2);
+        }
+    
+        /* Simple Button Glowing Effect with Gradient Glow */
+        .btn-glow {
+            position: relative;
+            background: linear-gradient(to right, #FF7E5F, #FD3A69);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            text-align: center;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+    
+        .btn-glow:hover {
+            box-shadow: 0 0 15px 5px rgba(255, 126, 95, 0.6), 0 0 30px 10px rgba(253, 58, 105, 0.4);
+            transform: scale(1.05);
+        }
+    
+        /* Full-page consistent sunset gradient background */
 body {
     background: linear-gradient(to bottom, #FF7E5F, #FD3A69);
     min-height: 100vh;
@@ -105,70 +105,143 @@ main {
     position: fixed;
     width: 100%;
     z-index: 10;
+    top: 0;
 }
 
-/* Modal Styles */
-.modal {
+/* Mobile Menu Styles */
+#mobileMenu {
     display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    border-radius: 12px;
-    z-index: 50;
-    max-width: 500px;
-    width: 90%;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s ease;
 }
 
-.modal-open {
+#mobileMenu.show {
     display: block;
-    opacity: 1;
 }
 
-.modal-content {
-    color: white;
-    font-size: 18px;
+/* Mobile Menu Styling */
+#mobileMenu ul {
+    flex-direction: column;
+    background-color: rgba(17, 25, 40, 0.9);
+    padding: 20px;
+    text-align: center;
 }
 
- /* Gradient Text */
- .gradient-text {
-    background: linear-gradient(90deg, #FF7E5F, #FD3A69);
-    -webkit-background-clip: text;
-    color: transparent;
-    background-clip: text;
+#mobileMenu ul li {
+    margin-bottom: 15px;
 }
 
-html {
-scroll-behavior: smooth;
+#mobileMenu ul li a {
+    text-align: center;
+    display: block;
+    padding: 10px;
+    font-size: 1.2rem;
 }
 
-#services {
-scroll-margin-top: 100px; /* Adjust based on your header height */
+@media (min-width: 768px) {
+    #mobileMenu {
+        display: none;
+    }
 }
+    
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            z-index: 50;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh; /* Ensures the modal doesn't exceed 80% of the viewport height */
+            overflow-y: auto; /* Adds a vertical scrollbar if content overflows */
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    
+        .modal-open {
+            display: block;
+            opacity: 1;
+        }
+    
+        .modal-content {
+            color: white;
+            font-size: 18px;
+        }
+    
+        /* Responsive and consistent styling for modal content */
+        .modal img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(90deg, #FF7E5F, #FD3A69);
+            -webkit-background-clip: text;
+            color: transparent;
+            background-clip: text;
+        }
+    
+        html {
+            scroll-behavior: smooth;
+        }
+    
+        #services {
+            scroll-margin-top: 100px; /* Adjust based on your header height */
+        }
     </style>
 </head>
 
 <body class="text-white font-sans leading-relaxed tracking-wide">
 
-    <!-- Header Section -->
-    <header class="glass-header py-6 top-0 left-0 z-10 shadow-xl">
-        <nav class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-4xl font-extrabold gradient-text hover:text-yellow-300 transition duration-300">CompanyName</a>
-            <ul class="flex space-x-6 md:space-x-8">
-                <li><a href="#about" class="hover:text-yellow-300 transition duration-300">About</a></li>
-                <li><a href="#services" class="hover:text-yellow-300 transition duration-300">Services</a></li>
-                <li><a href="#team" class="hover:text-yellow-300 transition duration-300">Team</a></li>
-                <li><a href="#blog" class="hover:text-yellow-300 transition duration-300">Blog</a></li>
-                <li><a href="#faq" class="hover:text-yellow-300 transition duration-300">FAQ</a></li>
-                <li><a href="#contact" class="hover:text-yellow-300 transition duration-300">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Header Section -->
+<header class="glass-header py-6 top-0 left-0 z-10 shadow-xl">
+    <nav class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="text-4xl font-extrabold gradient-text hover:text-yellow-300 transition duration-300">CompanyName</a>
+        
+        <!-- Hamburger Menu Button for Mobile -->
+        <div class="md:hidden">
+            <button id="navToggle" class="text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul id="navMenu" class="hidden md:flex space-x-6 md:space-x-8">
+            <li><a href="#about" class="hover:text-yellow-300 transition duration-300">About</a></li>
+            <li><a href="#services" class="hover:text-yellow-300 transition duration-300">Services</a></li>
+            <li><a href="#team" class="hover:text-yellow-300 transition duration-300">Team</a></li>
+            <li><a href="#blog" class="hover:text-yellow-300 transition duration-300">Blog</a></li>
+            <li><a href="#faq" class="hover:text-yellow-300 transition duration-300">FAQ</a></li>
+            <li><a href="#contact" class="hover:text-yellow-300 transition duration-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden absolute left-0 right-0 top-full bg-black text-white z-50 p-5">
+        <ul class="space-y-4">
+            <li><a href="#about" class="block hover:text-yellow-300">About</a></li>
+            <li><a href="#services" class="block hover:text-yellow-300">Services</a></li>
+            <li><a href="#team" class="block hover:text-yellow-300">Team</a></li>
+            <li><a href="#blog" class="block hover:text-yellow-300">Blog</a></li>
+            <li><a href="#faq" class="block hover:text-yellow-300">FAQ</a></li>
+            <li><a href="#contact" class="block hover:text-yellow-300">Contact</a></li>
+        </ul>
+    </div>
+</header>
 
     <main>
         <!-- Hero Section -->
@@ -561,6 +634,12 @@ document.querySelectorAll('.btn-glow').forEach(button => {
         openModal(textContent);
     });
 });
+    </script>
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('show');
+        });
     </script>
     </body>
     </html> 
